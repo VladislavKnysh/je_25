@@ -23,7 +23,8 @@ public class Note {
     private String noteName;
     @JsonProperty("note_description")
     private String noteDescription;
-    private Timestamp noteCreationTime;
+    @JsonProperty("note_creation_time")
+    private String noteCreationTime;
 
 
 }

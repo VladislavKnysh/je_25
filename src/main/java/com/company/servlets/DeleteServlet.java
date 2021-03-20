@@ -15,11 +15,11 @@ public class DeleteServlet extends JsonServlet {
     }
 
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        int index = Integer.parseInt(req.getParameter("note_id"));
 
+        noteService.delete(index);
 
-        Note note = readJson(Note.class, req);
-        noteService.delete(note.getNoteId());
-
+        resp.sendRedirect(req.getContextPath()+"/get");
 
     }
 }

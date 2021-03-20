@@ -31,6 +31,19 @@
         <servlet-name>Post</servlet-name>
         <url-pattern>/post/</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>NoteServlet</servlet-name>
+        <servlet-class>com.company.servlets.NoteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>NoteServlet</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+        <servlet-mapping>
+        <servlet-name>NoteServlet</servlet-name>
+        <url-pattern>/addnote</url-pattern>
+    </servlet-mapping>
 
 
 </web-app>

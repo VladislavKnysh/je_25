@@ -27,7 +27,7 @@ public class NoteService {
         String sql = "INSERT INTO notes (note_name, note_description, note_creation_time) " +
                 "VALUES (?,?,?);";
         jdbcTemplate.update(sql, new Object[]{note.getNoteName(),
-                note.getNoteDescription(), LocalTime.now()});
+                note.getNoteDescription(), LocalTime.now().toString()});
     }
 
     public List<Note> getAll() {
