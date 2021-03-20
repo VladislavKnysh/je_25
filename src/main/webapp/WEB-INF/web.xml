@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+                      http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <servlet>
+        <servlet-name>Get</servlet-name>
+        <servlet-class>com.company.servlets.GetServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Get</servlet-name>
+        <url-pattern>/get/</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Delete</servlet-name>
+        <servlet-class>com.company.servlets.DeleteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Delete</servlet-name>
+        <url-pattern>/post/delete/</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Post</servlet-name>
+        <servlet-class>com.company.servlets.PostServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Post</servlet-name>
+        <url-pattern>/post/</url-pattern>
+    </servlet-mapping>
+
+
+</web-app>
