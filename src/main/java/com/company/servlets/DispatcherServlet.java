@@ -44,7 +44,7 @@ public class DispatcherServlet extends HttpServlet {
 
                         m.invoke(instance, req, res);
                     } else if (addr.equalsIgnoreCase(req.getRequestURI()) && dynamic) {
-                        m.invoke(instance, (getDynamicID(req)),
+                        m.invoke(instance, (String.valueOf(req.getAttribute("id"))),
                                 req, res);
                     }
                 }
@@ -103,7 +103,8 @@ public class DispatcherServlet extends HttpServlet {
         Pattern pattern = Pattern.compile("(?<=\\/)\\d+$");
         Matcher matcher = pattern.matcher(req.getRequestURI());
         if (matcher.find()) {
-            return matcher.group(0);
+            req.setAttribute("id", matcher.group(0));
+            return String.valueOf(req.getAttribute("id"));
         } else {
             return null;
         }
