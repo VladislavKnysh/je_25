@@ -11,13 +11,13 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
-
-public class PostServlet extends JsonServlet {
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
-
-        Note note = readJson(Note.class, req);
-        noteService.add(note);
-    }
-}
+//
+//public class PostServlet extends JsonServlet {
+//    @Override
+//    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+//            throws ServletException, IOException {
+//
+//        Note note = readJson(Note.class, req);
+//        noteService.add(note);
+//    }
+//}

@@ -1,14 +1,12 @@
-package com.company;
+package com.company.sql;
 
+import com.company.annotations.Component;
 import com.company.dto.Note;
 import com.company.mappers.BeanPropertyRowMapper;
-import com.company.sql.HikariDataSourceFactory;
-import com.company.sql.JdbcTemplate;
-
 import javax.sql.DataSource;
 import java.time.LocalTime;
 import java.util.List;
-
+@Component
 public class NoteService {
     private final JdbcTemplate jdbcTemplate;
 

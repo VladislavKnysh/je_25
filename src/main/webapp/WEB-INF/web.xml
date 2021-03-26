@@ -5,45 +5,57 @@
                       http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
-    <servlet>
-        <servlet-name>Get</servlet-name>
-        <servlet-class>com.company.servlets.GetServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>Get</servlet-name>
-        <url-pattern>/get/</url-pattern>
-    </servlet-mapping>
 
     <servlet>
-        <servlet-name>Delete</servlet-name>
-        <servlet-class>com.company.servlets.DeleteServlet</servlet-class>
+        <servlet-name>Dispatcher</servlet-name>
+        <servlet-class>com.company.servlets.DispatcherServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>Delete</servlet-name>
-        <url-pattern>/post/delete/</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>Post</servlet-name>
-        <servlet-class>com.company.servlets.PostServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>Post</servlet-name>
-        <url-pattern>/post/</url-pattern>
-    </servlet-mapping>
-    
-    <servlet>
-        <servlet-name>NoteServlet</servlet-name>
-        <servlet-class>com.company.servlets.NoteServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>NoteServlet</servlet-name>
+        <servlet-name>Dispatcher</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
-        <servlet-mapping>
-        <servlet-name>NoteServlet</servlet-name>
-        <url-pattern>/addnote</url-pattern>
-    </servlet-mapping>
+
+
+
+<!--    <servlet>-->
+<!--        <servlet-name>Get</servlet-name>-->
+<!--        <servlet-class>com.company.servlets.GetServlet</servlet-class>-->
+<!--    </servlet>-->
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>Get</servlet-name>-->
+<!--        <url-pattern>/get/</url-pattern>-->
+<!--    </servlet-mapping>-->
+
+<!--    <servlet>-->
+<!--        <servlet-name>Delete</servlet-name>-->
+<!--        <servlet-class>com.company.servlets.DeleteServlet</servlet-class>-->
+<!--    </servlet>-->
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>Delete</servlet-name>-->
+<!--        <url-pattern>/post/delete/</url-pattern>-->
+<!--    </servlet-mapping>-->
+
+<!--    <servlet>-->
+<!--        <servlet-name>Post</servlet-name>-->
+<!--        <servlet-class>com.company.servlets.PostServlet</servlet-class>-->
+<!--    </servlet>-->
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>Post</servlet-name>-->
+<!--        <url-pattern>/post/</url-pattern>-->
+<!--    </servlet-mapping>-->
+<!--    -->
+<!--    <servlet>-->
+<!--        <servlet-name>NoteServlet</servlet-name>-->
+<!--        <servlet-class>com.company.servlets.NoteServlet</servlet-class>-->
+<!--    </servlet>-->
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>NoteServlet</servlet-name>-->
+<!--        <url-pattern>/</url-pattern>-->
+<!--    </servlet-mapping>-->
+<!--        <servlet-mapping>-->
+<!--        <servlet-name>NoteServlet</servlet-name>-->
+<!--        <url-pattern>/addnote</url-pattern>-->
+<!--    </servlet-mapping>-->
 
 
 </web-app>
