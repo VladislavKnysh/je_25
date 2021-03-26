@@ -56,9 +56,7 @@ public class DispatcherServlet extends HttpServlet {
 
         }
         res.setStatus(404);
-        res.getWriter().
-
-                write("NOT FOUND");
+        res.getWriter().write("NOT FOUND");
 
     }
 

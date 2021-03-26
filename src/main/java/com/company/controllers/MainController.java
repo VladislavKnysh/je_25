@@ -91,11 +91,11 @@ public class MainController extends JsonController {
     }
 
     @PostMapping("post/delete")
-    public void doPostDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public void doPostDelete(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         doDelete(req, resp);
     }
-    @DeleteMapping("post/delete")
-    public void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    @DeleteMapping("delete")
+    public void doDelete(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         Note note = readJson(Note.class, req);
         int index = note.getNoteId();
 
