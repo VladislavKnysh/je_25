@@ -18,7 +18,6 @@ import java.util.regex.Pattern;
 public class DispatcherServlet extends HttpServlet {
     private final ApplicationContext context = new ApplicationContext();
     private final List<Class<?>> controllersClasses;
-    private boolean dynamic = false;
 
     public DispatcherServlet() {
         PackageScanner packageScanner = new PackageScanner();
@@ -40,10 +39,10 @@ public class DispatcherServlet extends HttpServlet {
                     if (address == null) continue;
                     String addr = req.getContextPath() + "/" + address;
 
-                    if (addr.equalsIgnoreCase(req.getRequestURI()) && !dynamic) {
+                    if (addr.equalsIgnoreCase(req.getRequestURI()) && !dynamic(m)) {
 
                         m.invoke(instance, req, res);
-                    } else if (addr.equalsIgnoreCase(req.getRequestURI()) && dynamic) {
+                    } else if (addr.equalsIgnoreCase(req.getRequestURI()) && dynamic(m)) {
                         m.invoke(instance, (String.valueOf(req.getAttribute("id"))),
                                 req, res);
                     }
@@ -60,33 +59,32 @@ public class DispatcherServlet extends HttpServlet {
 
     }
 
+    private boolean dynamic(Method m) {
+        return m.isAnnotationPresent(GetDynamicMapping.class);
+    }
+
 
     private String checkMethod(Method m, HttpServletRequest req) {
 
         if (req.getMethod().equalsIgnoreCase("get")
                 && m.isAnnotationPresent(GetMapping.class)) {
-            dynamic = false;
             return m.getAnnotation(GetMapping.class).value();
         }
         if (req.getMethod().equalsIgnoreCase("post")
                 && m.isAnnotationPresent(PostMapping.class)) {
-            dynamic = false;
             return m.getAnnotation(PostMapping.class).value();
         }
         if (req.getMethod().equalsIgnoreCase("delete")
                 && m.isAnnotationPresent(DeleteMapping.class)) {
-            dynamic = false;
             return m.getAnnotation(DeleteMapping.class).value();
         }
 
         if (req.getMethod().equalsIgnoreCase("put")
                 && m.isAnnotationPresent(PutMapping.class)) {
-            dynamic = false;
             return m.getAnnotation(PutMapping.class).value();
         }
         if (req.getMethod().equalsIgnoreCase("get")
                 && m.isAnnotationPresent(GetDynamicMapping.class)) {
-            dynamic = true;
             String a = getDynamicID(req);
             if (Objects.nonNull(a)) {
                 return m.getAnnotation(GetDynamicMapping.class).value().replace("{id}",
